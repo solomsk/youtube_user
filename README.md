@@ -1,12 +1,12 @@
 # youtube_user
-> _马哥原创：用python开发的油管博主达人采集软件，支持根据搜索关键词、国家、粉丝数范围等条件，爬取博主链接、邮箱等信息。_
+> _马哥原创：用python开发的油管博主红人采集软件，支持根据搜索关键词、国家、粉丝数范围等条件，爬取博主链接、邮箱等信息。_
 
 # 一、背景分析
 ## 1.1 开发背景
 
-![爬取目标: 油管博主](https://s2.51cto.com/images/blog/202412/08095449_6754fc69f07c821166.png?x-oss-process=image/watermark,size_14,text_QDUxQ1RP5Y2a5a6i,color_FFFFFF,t_100,g_se,x_10,y_10,shadow_20,type_ZmFuZ3poZW5naGVpdGk=)
+![爬取目标: 油管红人](https://s2.51cto.com/images/blog/202412/08095449_6754fc69f07c821166.png?x-oss-process=image/watermark,size_14,text_QDUxQ1RP5Y2a5a6i,color_FFFFFF,t_100,g_se,x_10,y_10,shadow_20,type_ZmFuZ3poZW5naGVpdGk=)
 
-As everyone knows，YouTube（以下简称油管）是全世界最大的视频社交平台，拥有上亿的用户群体和海量日活用户。尤其是平台上来自各个国家地区的达人博主，蕴含着巨大的商业价值。通过收集油管的用户数据，客户可以更深入地了解达人博主的最新动向和商业价值，从而更有效地助力业务合作。
+As everyone knows，YouTube（以下简称油管）是全世界最大的视频社交平台，拥有上亿的用户群体和海量日活用户。尤其是平台上来自各个国家地区的红人博主，蕴含着巨大的商业价值。通过收集油管的用户数据，客户可以更深入地了解红人博主的最新动向和商业价值，从而更有效地助力业务合作。
 因此，我用python开发了一个爬虫采集工具，叫"爬油管博主软件"，如下。
 ## 1.2 软件界面
 软件界面，如下：（目前已升级至v1.7版）<img width="900" height="678" alt="v1 7" src="https://github.com/user-attachments/assets/be718647-0e22-49c7-bce4-67147be5a1b3" />
@@ -119,12 +119,16 @@ if country_list != ['']:  # 国家不是空
 季卡：使用期限3个月，399元。季卡可多次购买。适合中期采集需求
 年卡：使用期限1年，799元。年卡可多次购买。适合长期采集需求
 ```
-**1）付费方式一：（手动获取，付费后加我微信（493882434）对接卡密）**
+**方式一：自助开通（推荐）**
+
+开通入口：https://mgnb.pro/product/youtube_user
+
+**方式二：自助开通**
+
+开通入口：https://kjyjf.xetlk.com/s/ptQuS
+
+**方式三：手动开通，付费后加v（493882434）对接**
 <img width="2324" height="604" alt="收款码v5" src="https://github.com/user-attachments/assets/4059ec7f-b45f-490e-8d9e-ea2d4f11c408" />
-
-**2）付费方式二：（自动获取， 自己付费自己拿卡密，无需加v对接）**
-
-自助开通入口：https://kjyjf.xetlk.com/s/ptQuS
 
 
 ## 4.2 一机一码
