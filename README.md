@@ -1,6 +1,10 @@
 # youtube_user
 > _马哥原创：用python开发的油管博主红人采集软件，支持根据搜索关键词、国家、粉丝数范围等条件，爬取博主链接、邮箱等信息。_
 
+<p align="center">
+<a href="README.md">简体中文 README</a> | <a href="README.en.md">English README</a>
+</p>
+
 # 一、背景分析
 ## 1.1 开发背景
 
