@@ -2,7 +2,9 @@
 
 > Original creation by Mage: A Python-based YouTube influencer crawler that supports filtering by search keywords, country, follower count range, and extracts blogger links, emails, and other contact information.
 
----
+<p align="center">
+<a href="README.md">简体中文 README</a> | <a href="README.en.md">English README</a>
+</p>
 
 ## Table of Contents
 
@@ -39,9 +41,8 @@ Therefore, I developed a Python-based crawler tool called **"YouTube User Crawle
 
 ### Software Interface
 
-Software interface screenshot (currently upgraded to v1.7):
+Software interface screenshot (currently upgraded to v1.7):<img width="866" height="714" alt="image" src="https://github.com/user-attachments/assets/a65a7194-4e0b-46b3-8ec6-78b975814f41" />
 
-![v1.7](https://private-user-images.githubusercontent.com/228842838/483846366-be718647-0e22-49c7-bce4-67147be5a1b3.png)
 
 ### Results Demo
 
@@ -227,9 +228,7 @@ The software is independently developed and maintained by the author with long-t
 
 ## Download
 
-To get the latest software package, follow the WeChat Official Account **"老男孩的平凡之路"** and reply with: **爬油管博主软件**
-
-![QR Code - Official Account](https://private-user-images.githubusercontent.com/228842838/530122723-2c77db4e-8483-4b39-b605-7126f0c4a637.png)
+To get the latest software package, follow the WeChat Official Account **"老男孩的平凡之路"** and reply with: **爬油管博主软件**<img width="2198" height="426" alt="image" src="https://github.com/user-attachments/assets/7656bd7d-332d-44e8-af10-0cd74cf696d6" />
 
 ---
 
