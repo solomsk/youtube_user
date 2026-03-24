@@ -1,5 +1,5 @@
 # youtube_user
-> _马哥原创：用python开发的油管博主红人采集软件，支持根据搜索关键词、国家、粉丝数范围等条件，爬取博主链接、邮箱等信息。_
+> 🔥 YouTube红人采集神器 - 博主搜索、智能筛选、16个核心字段（含邮箱等联系方式），GUI界面开箱即用。商业软件，提供日卡试用。
 
 <p align="center">
 <a href="README.md">简体中文 README</a> | <a href="README.en.md">English README</a>
