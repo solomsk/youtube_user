@@ -1,235 +1,235 @@
 # youtube_user
 
-> Original creation by Mage: A Python-based YouTube influencer crawler that supports filtering by search keywords, country, follower count range, and extracts blogger links, emails, and other contact information.
+> 🔥 YouTube Influencer Finder — Essential Tool for Outbound Brands
+>
+> 💡 Features: ✅ Search influencers by keywords ✅ Filter by country/region ✅ Filter by subscriber count
+>
+> 🔗 Download: [Latest Release](https://github.com/mashukui/youtube_user/releases)
 
 <p align="center">
 <a href="README.md">简体中文 README</a> | <a href="README.en.md">English README</a>
 </p>
 
-## Table of Contents
+# 1. Overview
 
-- [Background](#background)
-  - [Development Background](#development-background)
-  - [Software Interface](#software-interface)
-  - [Results Demo](#results-demo)
-  - [Demo Video](#demo-video)
-  - [Software Notes](#software-notes)
-- [Core Technologies](#core-technologies)
-  - [GUI Interface](#gui-interface)
-  - [Web Crawler](#web-crawler)
-- [Features](#features)
-  - [ChromeDriver Configuration](#chromedriver-configuration)
-  - [Data Collection](#data-collection)
-- [Pricing](#pricing)
-  - [License Key Options](#license-key-options)
-  - [One Machine, One Code](#one-machine-one-code)
-  - [No Multi-instance](#no-multi-instance)
-  - [Software Maintenance](#software-maintenance)
-- [Download](#download)
+## 1.1 Background
 
----
+![Target - YouTube Influencers](https://files.mdnice.com/user/32110/9df21c30-9071-48b7-bbbe-165665742a07.png)
 
-## Background
+YouTube, as a leading global video social platform, brings together hundreds of millions of daily active users and diverse influencer ecosystems across multiple regions, offering enormous commercial value. Accurately collecting platform user data helps gain deep insights into influencer content trends and commercial potential, enabling efficient business cooperation. Based on this demand, I independently developed "YouTube Influencer Finder v2.0", built with Python for fully automated data collection.
 
-### Development Background
+Why version 2.0? Because I previously released an initial version using a browser automation framework, and have now upgraded it to use the official YouTube Data API v3.
 
-As everyone knows, **YouTube** is the world's largest video social platform with hundreds of millions of users and massive daily active engagement. The influencer bloggers from various countries and regions on the platform hold tremendous commercial value. By collecting YouTube user data, clients can gain deeper insights into the latest trends and commercial value of influencer bloggers, thereby enabling more effective business collaborations.
+## 1.2 Software Interface
 
-Therefore, I developed a Python-based crawler tool called **"YouTube User Crawler"**.
+![Software Interface](https://files.mdnice.com/user/32110/b77dfa83-ac34-4ee6-b709-d5c108ae7c7b.png)
 
-![Crawling Target: YouTube Influencers](https://s2.51cto.com/images/blog/202412/08095449_6754fc69f07c821166.png?x-oss-process=image/watermark,size_14,text_QDUxQ1RP5Y2a5a6i,color_FFFFFF,t_100,g_se,x_10,y_10,shadow_20,type_ZmFuZ3poZW5naGVpdGk=)
+## 1.3 Results Preview
 
-### Software Interface
+Scraped results 1 (fields are split into 2 images due to quantity):
+![Results Part 1: First 10 Fields](https://files.mdnice.com/user/32110/c43c1730-8782-422e-8eed-53feb73f1670.png)
 
-Software interface screenshot (currently upgraded to v1.7):<img width="866" height="714" alt="image" src="https://github.com/user-attachments/assets/a65a7194-4e0b-46b3-8ec6-78b975814f41" />
+![Results Part 2: Last 12 Fields](https://files.mdnice.com/user/32110/3af9e3c3-1db1-4329-9bdd-6498c9561876.png)
 
+Scraped results 2 (clean version):
+> https://docs.qq.com/sheet/DVEFhZlFKR1NXVEdN?tab=ht1erv
 
-### Results Demo
+## 1.4 Important Notes
 
-Crawling Results 1 (many fields, may be hard to read):
+1. Supports both Windows and Mac — no Python environment setup required, ready to use out of the box!
+2. Uses YouTube official API — no anti-scraping risks
+3. Supports filtering by: brand keywords / country & region / subscriber count range
+4. During scraping, data is saved to CSV after every single record (not at the end). This prevents data loss if the process is interrupted (default interval: 1–2s per record, customizable)
+5. Detailed log files record the entire process for easy troubleshooting
+6. CSV includes 22 core fields: Search Keyword, Page Number, Video Title, Video URL, Current Video Views, Creator Name, Creator URL, Channel ID, Channel URL, Country, Telegram Link, WhatsApp Link, Twitter Link, Facebook Link, Instagram Link, TikTok Link, Subscribers, Total Videos, Total Views, Join Date, Email_Note, Email_Additional
 
-![Crawling Results Preview](https://s2.51cto.com/images/blog/202412/08095450_6754fc6a39d8685286.png?x-oss-process=image/watermark,size_14,text_QDUxQ1RP5Y2a5a6i,color_FFFFFF,t_100,g_se,x_10,y_10,shadow_20,type_ZmFuZ3poZW5naGVpdGk=)
+# 2. Technical Implementation
 
-Crawling Results 2 (Clear version):
+## 2.1 Architecture
 
-> [View Sample Results Spreadsheet](https://docs.qq.com/sheet/DVEFhZlFKR1NXVEdN?tab=ht1er)
+Built with Python, using these main modules:
 
-### Demo Video
+```python
+tkinter: GUI interface
+requests: HTTP requests
+threading: Multi-threaded collection
+json: Response parsing
+csv: CSV export
+logging: Log recording
+```
 
-Software operation demo:
+## 2.2 GUI Interface
 
-> [【Software Demo】YouTube Blogger Collection Tool, Can Crawl Tens of Thousands of Entries, Includes Emails!](https://mp.weixin.qq.com/s/wYz_yLRw_WPHqSj7mWvwhQ)
-
-### Software Notes
-
-Important notes, please read carefully:
-
-- **Windows users** can directly double-click the `.exe` file to use - no Python environment required, very convenient!
-- The software uses **browser simulation** for crawling, effectively avoiding anti-scraping measures
-- Supports filtering by: **Country/Region** (multiple) and **Follower count range**
-- Supports multiple settings for: **Search keywords**, **Country/Region**
-- During crawling, data is saved to CSV **after each entry** (not at the end), preventing data loss from unexpected interruptions (~1-2s interval per entry)
-- Detailed **log files** record the entire operation process for easy troubleshooting
-- **Blogger filtering happens simultaneously** during crawling (not after), ensuring high efficiency!
-- The blogger CSV contains **16 core fields**:
-  - Search keyword
-  - Video title
-  - Video link
-  - Current video views
-  - Blogger name
-  - Blogger link
-  - Country
-  - Telegram link
-  - WhatsApp link
-  - Twitter link
-  - Facebook link
-  - Instagram link
-  - Follower count
-  - Total videos
-  - Total views
-  - Email
-
----
-
-## Core Technologies
-
-All software modules are developed using **Python**, with the following main components:
-
-| Module | Purpose |
-|--------|---------|
-| `tkinter` | GUI software interface |
-| `selenium` | Web crawler requests |
-| `json` | Response data parsing |
-| `csv` | CSV result saving, data cleaning |
-| `logging` | Log recording |
-
-### GUI Interface
-
-The software main interface is developed with **tkinter**, Python's standard GUI toolkit, allowing the creation of windows, dialogs, buttons, and other desktop application components. tkinter is built into Python, so no additional library installation is required.
-
-Sample code:
+Built with tkinter for rapid frontend development:
 
 ```python
 # Create main window
 root = tk.Tk()
-root.title('YouTube Blogger Collection Software v1.0')
-
+root.title('YouTube Influencer Finder v2.0')
 # Set window size
 root.minsize(width=900, height=650)
-
-# Search keywords
-tk.Label(root, text='Search Keywords:').place(x=30, y=130)
-query = tk.StringVar()
-query.set('')
-entry = tk.Entry(root, bg='#ffffff', width=80, textvariable=query)
-entry.place(x=110, y=130, anchor='nw')
-
-# Positioning
-tk.Label(root, justify='left', fg='red', text='Separate multiple keywords with |').place(x=650, y=130)
+# Window icon
+root.iconbitmap('mage.ico')
 ```
 
-### Web Crawler
+## 2.3 Scraping Logic
 
-The crawler uses **Selenium** to simulate browser operations for sending requests.
-
-**Browser initialization:**
+**YouTubeApiClient class** — YouTube Data API v3 wrapper:
 
 ```python
-# Initialize browser
-chrome_driver = './chromedriver.exe'  # Browser driver
-chrome_options = webdriver.ChromeOptions()
-chrome_options.add_argument('--headless')
-browser = webdriver.Chrome(executable_path=chrome_driver, options=chrome_options)
-wait = WebDriverWait(browser, 10)
-self.tk_show('\nStarting to crawl keyword[{}], browser initializing, please wait..\n'.format(keyword))
-
-# Start crawling
-js = 'window.open("https://www.youtube.com/results?search_query={}");'.format(quote(keyword))
-browser.execute_script(js)
+search_videos()    # Search videos by keyword, return video list
+get_channels()     # Batch fetch channel details (subscribers, etc.)
+get_videos()        # Batch fetch video details (views, etc.)
+get_regions()       # Get global country code mapping
 ```
 
-**Parsing blogger country code:**
+**YouTubeSpider class** — Core scraping logic:
+
+Two-phase collection:
 
 ```python
-# Country
-try:
-    country = browser.find_element(By.XPATH, '//*[@icon="privacy_public"]/../../td[2]').text
-except:
-    country = ''
-
-if country_list != ['']:  # Country is not empty
-    if country not in country_list and country not in country_list2:
-        self.tk_show('Country is [{}], does not meet specified countries:{}, skipping!'.format(country, country_list))
-        browser.close()
-        browser.switch_to.window(handles[-2])
-        continue
+Phase 1 (API Phase)
+├── Search videos by keyword (50 per page)
+├── Extract channel IDs, deduplicate
+├── Batch call API for channel info (subscribers/country/join date)
+└── Filter: subscriber range, country/region
+    ↓
+Phase 2 (Web Scraping, optional)
+└── Visit channel "About" page
+    ├── Extract emails via regex
+    ├── Extract social media links (Telegram/WhatsApp/Twitter, etc.)
+    └── Fill in contact info that API cannot provide
 ```
 
----
+## 2.4 Logging
 
-## Features
+**Log_week class** — Logging module:
 
-### ChromeDriver Configuration
+Logs are written to both the software UI and local files for persistent storage.
 
-Before starting collection, install the latest version of Chrome browser, then configure the corresponding version of ChromeDriver:
+```python
+def get_logger(self):
+    self.logger = logging.getLogger(__name__)
+    # Log format
+    formatter = '[%(asctime)s-%(filename)s][%(funcName)s-%(lineno)d]--%(message)s'
+    # Log level
+    self.logger.setLevel(logging.DEBUG)
+    log_formatter = logging.Formatter(formatter, datefmt='%Y-%m-%d %H:%M:%S')
+    # Log file name
+    info_file_name = time.strftime("%Y-%m-%d") + '.log'
+    # Save to specific directory
+    case_dir = r'./logs/'
+    if not self.logger.handlers:
+        # Console handler
+        sh = logging.StreamHandler()
+        info_handler = TimedRotatingFileHandler(filename=case_dir + info_file_name,
+                                                 when='MIDNIGHT',
+                                                 interval=1,
+                                                 backupCount=7,
+                                                 encoding='utf-8')
+        self.logger.addHandler(sh)
+        sh.setFormatter(log_formatter)
+        self.logger.addHandler(info_handler)
+        info_handler.setFormatter(log_formatter)
+    return self.logger
+```
 
-> [ChromeDriver Download Instructions](https://docs.qq.com/doc/DVFZNdk91eGV0cVRH)
+# 3. Usage Guide
 
-### Data Collection
+## 3.1 Configure API Key
 
-After configuring ChromeDriver, open the `youtube_user.exe` software and log in:
+As mentioned in the overview, the software has been upgraded to v2.0 using the YouTube Data API v3. You need to configure your own API key before running.
 
-![Software Login Interface](https://s2.51cto.com/images/blog/202412/08095449_6754fc69ec11e94556.png?x-oss-process=image/watermark,size_14,text_QDUxQ1RP5Y2a5a6i,color_FFFFFF,t_100,g_se,x_10,y_10,shadow_20,type_ZmFuZ3poZW5naGVpdGk=)
+Setup guide: [Step-by-Step YouTube Data API v3 Setup Tutorial](https://mp.weixin.qq.com/s/cFQ8GM3EK5B448qLWytsBw)
 
-Fill in the crawling conditions on the main interface:
+After getting your API key, add it to `config_pub.json` in the software directory:
+![Configure API Key](https://files.mdnice.com/user/32110/3d586b34-a113-4f15-b7ab-89af7935acc2.png)
 
-![Set Crawling Conditions](https://s2.51cto.com/images/blog/202412/08095450_6754fc6a0ac0140488.png?x-oss-process=image/watermark,size_14,text_QDUxQ1RP5Y2a5a6i,color_FFFFFF,t_100,g_se,x_10,y_10,shadow_20,type_ZmFuZ3poZW5naGVpdGk=)
+The config file has 2 parameters:
+- `wait_sec`: API request interval (default 1s, adjustable)
+- API key itself
 
-Click the **Start** button to begin collection.
+## 3.2 Start Scraping
 
----
+After configuring the key, you're ready to collect (make sure your network is connected).
 
-## Pricing
+On the software interface, enter your criteria:
+![Filter Criteria](https://files.mdnice.com/user/32110/b0040825-58ac-4dda-91ad-b5d92d5a4961.png)
 
-### License Key Options
+Click "Start" and the software will automatically collect data in batch.
 
-| Plan | Duration | Price | Notes |
-|------|----------|-------|-------|
-| Day Pass | 1 day | ¥39 | One-time purchase only. Good for trial/temporary needs |
-| Monthly | 1 month | ¥149 | Can purchase multiple times. Good for short-term needs |
-| Quarterly | 3 months | ¥399 | Can purchase multiple times. Good for medium-term needs |
-| Yearly | 1 year | ¥799 | Can purchase multiple times. Good for long-term needs |
+## 3.3 Usage Tips
 
-**Option 1: Self-service (Recommended)**
+- **1. Search Keywords**
 
-Purchase portal: https://mgnb.pro/product/youtube_user
+Industry names, brand names, competitor terms, multi-word combinations — find creators posting content in your target area.
 
-**Option 2: Alternative self-service**
+| Scenario | Keyword Strategy | Effect |
+|----------|-----------------|--------|
+| Precise creator targeting | Use brand/competitor names | Find creators active in the field |
+| Broad collection | Use broad terms like "beauty", "gaming" | High volume but diverse creator types |
+| Trend riding | Use current hot topics | Find latest active creators in short time |
+| Multi-word combo | "beauty tutorial \| skincare review" | Collect creators from multiple directions at once |
 
-Purchase portal: https://kjyjf.xetlk.com/s/ptQuS
+- **2. Country/Region**
 
-**Option 3: Manual activation**
+Supports both Chinese and English input. If unsure, refer to the standard country names in `country.json`.
 
-After payment, add on WeChat (ID: **493882434**) for manual activation.
+| Scenario | Country Strategy | Purpose |
+|----------|-----------------|---------|
+| Brand going global | Target market countries (US/UK/Australia) | Precisely connect with local creators |
+| Cross-cultural content | Japan/Korea/Southeast Asia | Find local creators interested in Chinese brands |
+| Avoid competition | Smaller markets (France/Germany/Brazil) | Blue ocean in a red sea |
+| Bulk collection | Leave empty (no country limit) | Maximum coverage, no creators missed |
 
-### One Machine, One Code
+- **3. Subscriber Range**
 
-The software uses a **one machine, one code** mechanism. One license key can only run on one computer and cannot be used on multiple computers.
+Use subscriber ranges to precisely target creator tiers and quickly establish cooperation.
 
-### No Multi-instance
+| Subscriber Range | Best For | Creator Characteristics |
+|-----------------|----------|------------------------|
+| **0–10K** | Beginners/newcomers | Low cost, high cooperation, but unstable metrics |
+| **10K–100K** | Mid-tier creators | Best cost-performance ratio, developing commercial awareness |
+| **100K–500K** | Emerging top creators | Strong influence, moderate pricing |
+| **500K–5M** | Top KOLs | High influence, but high cost and lower cooperation |
+| **5M+** | Super influencers | Luxury brands only, out of reach for most |
 
-Only one software instance is allowed per computer. Multi-instance is not supported.
+- **One-liner summary:** Keywords determine what content creators make, country determines which market, subscriber count determines which tier. Use all three filters together to precisely lock onto your target and save time and cost.
 
-### Software Maintenance
+# 4. Demo Video
 
-The software is independently developed and maintained by the author with long-term updates to ensure stable operation.
+Full software demo: [YouTube Influencer Finder — Scraping Demo](https://mp.weixin.qq.com/s/Pn6QrsQ1YTYAao3DWWYovg)
 
----
+# 5. Paid Plans
 
-## Download
+## 5.1 License Options
 
-To get the latest software package, follow the WeChat Official Account **"老男孩的平凡之路"** and reply with: **爬油管博主软件**<img width="2198" height="426" alt="image" src="https://github.com/user-attachments/assets/7656bd7d-332d-44e8-af10-0cd74cf696d6" />
+```python
+Day Pass:     1 day,     ¥39   — Short-term/trial needs
+Monthly:      1 month,   ¥149  — Short-term collection needs
+Quarterly:    3 months,  ¥399  — Medium-term needs
+Yearly:       1 year,    ¥799  — Long-term needs
+```
 
----
+Purchase: https://mgnb.pro/product/youtube_user
 
-*Made with ❤️ by Mage*
+## 5.2 One Key Per Machine
+
+To prevent unauthorized redistribution, each license key is bound to one machine and cannot be used on multiple computers.
+
+## 5.3 Single Instance Only
+
+Only one instance of the software can run per computer. Multi-instance is not supported.
+
+## 5.4 Software Maintenance
+
+Independently developed and maintained by me, with long-term updates and stable operation guaranteed.
+
+# 6. Get the Software
+
+Follow the WeChat official account "**老男孩的平凡之路**" and reply "**爬油管博主**" to get the latest installer.
+
+[Direct Download](https://github.com/mashukui/youtube_user/releases)
+
+<img width="1938" height="364" alt="WeChat QR Code" src="https://github.com/user-attachments/assets/5ae8b283-0c5f-48e8-a909-d91dcb09210a" />
+
